@@ -34,6 +34,13 @@ namespace WisdomPetMedicine.Pet.Api.Infrastructure
                 options.UseSqlServer(configuration.GetConnectionString("Pet"));
             });
         }
+        public static void AddPetDb(this IServiceCollection services)
+        {
+            services.AddDbContext<PetDbContext>(options =>
+            {
+                options.UseInMemoryDatabase("Pet");
+            });
+        }
         public static void EnsurePetDbIsCreated(this IApplicationBuilder app)
         {
             using var scope = app.ApplicationServices.CreateScope();

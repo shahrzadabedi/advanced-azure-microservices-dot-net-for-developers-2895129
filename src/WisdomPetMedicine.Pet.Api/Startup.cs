@@ -22,7 +22,7 @@ namespace WisdomPetMedicine.Pet.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddPetDb(Configuration);
+            services.AddPetDb();
             services.AddScoped<IPetRepository, PetRepository>();
             services.AddScoped<PetApplicationService>();
             services.AddScoped<IBreedService, FakeBreedService>();
