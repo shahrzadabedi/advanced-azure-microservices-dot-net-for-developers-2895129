@@ -46,7 +46,7 @@ namespace WisdomPetMedicine.Pet.Api.Infrastructure
             using var scope = app.ApplicationServices.CreateScope();
             var context = scope.ServiceProvider.GetService<PetDbContext>();
             context.Database.EnsureCreated();
-            context.Database.CloseConnection();
+            //context.Database.CloseConnection();
         }
     }
 }
